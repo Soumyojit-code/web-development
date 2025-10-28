@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+</head>
+<body style="background-color:powderblue;">
+
+
+<center>
+
+
+
+    <script>
+
+        function add(val){
+            if(val=="="){
+                var data=document.getElementById("op").value
+                document.getElementById("op").value=eval(data)
+                return false;
+            }
+
+            if(val=="AC"){
+                document.getElementById("op").value=""
+                return false;
+            }
+
+            var op=document.getElementById("op").value
+            op=op+val;
+            document.getElementById("op").value=op
+            return false;
+        }
+    </script>
+    <style>
+        .number{
+            background-color: #dee2e6;
+
+            width: 50px;
+            margin: 8px;
+            height: 50px;
+            font-style: bold;
+            font-size:30px;
+
+
+        }
+        .operator{
+            margin: 8px;
+            background-color:yellow;
+            width: 50px;
+            height: 50px;
+            font-style: bold;
+            font-size:30px;
+
+
+        }
+        .equals{
+            background-color: limegreen;
+            margin: 8px;
+            width: 50px;
+            height: 50px;
+            font-style: bold;
+            font-size:30px;
+
+
+        }
+        .clear{
+            background-color: red;
+            margin: 8px;
+            width: 50px;
+            height: 50px;
+            font-style: bold;
+            font-size:30px;
+
+
+        }
+        .special{
+            background-color: #007bff;
+            margin: 8px;
+            width: 50px;
+            height: 50px;
+            font-style: bold;
+            font-size:30px;
+
+        }
+        .sb{
+            border: black solid 6px;
+            width:300px;
+            height: 550px;
+            border-radius: 20px ;
+            box-shadow: #3d3b3c 10px 6px 2px;
+      }
+        .ip{
+            margin: 10px;
+            width: 250px;
+            height: 50px;
+            font-style: bold;
+            font-size: 30px;
+        }
+        h1{
+            margin-top:80px;
+            margin-bottom: 10px;
+
+        }
+    </style>
+
+
+    <form class="sb">
+        <h1>Calculator</h1>
+
+        <input class="ip" id="op" type="text" value="" readonly>
+        <div class="buttons-grid">
+            <button type="button" class="number" onclick="return add('00');">00</button>
+            <button type="button" class="special" onclick="return add('(');">(</button>
+            <button type="button" class="special" onclick="return add(')');">)</button>
+            <button style="font-size: 26px;" type="button" class="clear" onclick="return add('AC');">AC</button>
+            <br>
+            <button type="button" class="number" onclick="return add('7');">7</button>
+            <button type="button" class="number" onclick="return add('8');">8</button>
+            <button type="button" class="number" onclick="return add('9');">9</button>
+            <button type="button" class="operator" onclick="return add('*');">×</button>
+             <br>
+            <button type="button" class="number" onclick="return add('4');">4</button>
+            <button type="button" class="number" onclick="return add('5');">5</button>
+            <button type="button" class="number" onclick="return add('6');">6</button>
+            <button type="button" class="operator" onclick="return add('-');">-</button>
+            <br>
+            <button type="button" class="number" onclick="return add('1');">1</button>
+            <button type="button" class="number" onclick="return add('2');">2</button>
+            <button type="button" class="number" onclick="return add('3');">3</button>
+            <button type="button" class="operator" onclick="return add('+');">+</button>
+           <br>
+            <button type="button" class="number" onclick="return add('0');">0</button>
+            <button type="button" class="number" onclick="return add('.');">.</button>
+            <button type="button" class="equals" onclick="return add('=');">=</button>
+            <button type="button" class="operator" onclick="return add('/');">÷</button>
+        </div>
+    </form>
+
+
+
+
+</center>
+
+
+
+
+
+</body>
+</html>
